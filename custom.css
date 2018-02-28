@@ -99,17 +99,41 @@ a,
     line-height: 24px;
     text-decoration: underline; }
 
+body, .site-content {
+  background: rgba(255, 0, 0, 0.15); }
+
 #container {
   position: relative;
   margin: auto;
   width: calc(100% * 10/12);
   display: flex;
+  background: #FFFFFF;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1); }
 
 .nf-form-cont {
   position: relative;
   margin: auto;
   width: calc(100% * 8/10); }
+  .nf-form-cont input[type=text], .nf-form-cont input[type=email] {
+    border-radius: 0px; }
+  .nf-form-cont label[for=nf-field-43] {
+    padding-top: 72px;
+    padding-bottom: 24px; }
+  .nf-form-cont .nf-field-container:not(.listcheckbox-container) {
+    position: relative;
+    box-sizing: border-box;
+    background: rgba(255, 0, 0, 0.15); }
+    .nf-form-cont .nf-field-container:not(.listcheckbox-container).email-container {
+      width: 100%;
+      display: block; }
+  .nf-form-cont input[type=button] {
+    position: relative;
+    float: right;
+    background: #203D54;
+    color: #FFFFFF;
+    border-radius: 0px;
+    padding-left: 72px;
+    padding-right: 72px; }
   .nf-form-cont .nf-field-element > ul {
     display: flex;
     width: 100%;

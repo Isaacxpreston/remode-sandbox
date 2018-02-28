@@ -131,30 +131,64 @@ a,
 
 $debug: rgba(255, 0, 0, 0.15);
 
+body, .site-content {
+  background: $debug;
+}
 
+// outer container (col-10)
 #container {
   position: relative;
   margin: auto;
   width: calc(100% * 10/12);
   display: flex;
+  background: $white;
   box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
 }
 
+// form wrapper
 .nf-form-cont {
   position: relative;
   margin: auto;
   width: calc(100% * 8/10);
-  // background: $debug;
-  // box-shadow: 0 2px 30px 0 rgba(0,0,0,0.50); // for buttons?
-  // box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+
+
+  // text inputs and labels
+
+  input[type=text], input[type=email] {
+    border-radius: 0px;
+  }
 
   label {
     @extend .utility ;
     &[for=nf-field-43] {
       @extend .h3 ;
+      padding-top: 72px;
+      padding-bottom: 24px;
     }
   }
-  
+
+  .nf-field-container:not(.listcheckbox-container) {
+    position: relative;
+    box-sizing: border-box;
+    // display: inline-block;
+    background: $debug;
+    &.email-container {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  // submit button 
+  input[type=button] {
+    position: relative;
+    float: right;
+    background: $off-black;
+    color: $white;
+    border-radius: 0px;
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+
   // checkbox container
   .nf-field-element {
    >ul {
