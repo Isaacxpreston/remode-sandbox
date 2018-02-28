@@ -132,11 +132,21 @@ a,
 $debug: rgba(255, 0, 0, 0.15);
 
 
-.nf-form-cont {
-
-  background: $debug;
-  // box-shadow: 0 2px 30px 0 rgba(0,0,0,0.50); // for buttons?
+#container {
+  position: relative;
+  margin: auto;
+  width: calc(100% * 10/12);
+  display: flex;
   box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
+}
+
+.nf-form-cont {
+  position: relative;
+  margin: auto;
+  width: calc(100% * 8/10);
+  // background: $debug;
+  // box-shadow: 0 2px 30px 0 rgba(0,0,0,0.50); // for buttons?
+  // box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
 
   label {
     @extend .utility ;
@@ -144,14 +154,27 @@ $debug: rgba(255, 0, 0, 0.15);
       @extend .h3 ;
     }
   }
-
+  
+  // checkbox container
+  .nf-field-element {
+   >ul {
+    display:  flex;
+    width:  100%;
+    position:  relative;
+    justify-content:  space-between;
+      >li {
+        position: relative;
+        width: calc((100% * 2/8) - 18px) !important;
+      }
+    }
+  }
 
   // checkbox
   .list-checkbox-wrap .nf-field-element li input[type=checkbox] {
     position: relative;
-    width: 212px !important;
+    // width: calc((100% * 2/8) - 18px) !important;
+    width: 100% !important;
     height: 146px !important;
-    background: blue;
     background-image: url('./assets/image/Image.png');
     + label {
       display: none;
@@ -206,6 +229,17 @@ $debug: rgba(255, 0, 0, 0.15);
 
   .nf-form-title {
     display: none;
+  }
+
+
+  // errors
+
+  [aria-invalid="true"] {
+    border: 1px solid $reinvest;
+  }
+
+  .nf-error-msg {
+    color: $reinvest;
   }
 }
 
