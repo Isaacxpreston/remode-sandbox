@@ -160,18 +160,18 @@ body, .site-content {
 
   label {
     @extend .utility ;
-    &[for=nf-field-43] {
-      @extend .h3 ;
-      padding-top: 72px;
-      padding-bottom: 24px;
-    }
+    // &[for=nf-field-43] {
+    //   @extend .h3 ;
+    //   padding-top: 72px;
+    //   padding-bottom: 24px;
+    // }
   }
 
   .nf-field-container:not(.listcheckbox-container) {
     position: relative;
     box-sizing: border-box;
     // display: inline-block;
-    background: $debug;
+    // background: $debug;
     &.email-container {
       width: 100%;
       display: block;
@@ -184,6 +184,7 @@ body, .site-content {
     float: right;
     background: $off-black;
     color: $white;
+    text-transform: uppercase;
     border-radius: 0px;
     padding-left: 72px;
     padding-right: 72px;
@@ -206,12 +207,18 @@ body, .site-content {
   // checkbox
   .list-checkbox-wrap .nf-field-element li input[type=checkbox] {
     position: relative;
-    // width: calc((100% * 2/8) - 18px) !important;
     width: 100% !important;
     height: 146px !important;
-    background-image: url('./assets/image/Image.png');
     + label {
       display: none;
+    }
+  }
+
+  .list-checkbox-wrap {
+    label {
+      @extend .h3 ;
+      padding-top: 72px;
+      padding-bottom: 24px;
     }
   }
 

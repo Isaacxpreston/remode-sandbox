@@ -39,7 +39,7 @@ h2,
 
 h3,
 .h3,
-.nf-form-cont label[for=nf-field-43] {
+.nf-form-cont .list-checkbox-wrap label {
   /* Heading 3: */
   font-family: 'GTWalsheimMedium';
   font-size: 18px;
@@ -116,13 +116,9 @@ body, .site-content {
   width: calc(100% * 8/10); }
   .nf-form-cont input[type=text], .nf-form-cont input[type=email] {
     border-radius: 0px; }
-  .nf-form-cont label[for=nf-field-43] {
-    padding-top: 72px;
-    padding-bottom: 24px; }
   .nf-form-cont .nf-field-container:not(.listcheckbox-container) {
     position: relative;
-    box-sizing: border-box;
-    background: rgba(255, 0, 0, 0.15); }
+    box-sizing: border-box; }
     .nf-form-cont .nf-field-container:not(.listcheckbox-container).email-container {
       width: 100%;
       display: block; }
@@ -131,6 +127,7 @@ body, .site-content {
     float: right;
     background: #203D54;
     color: #FFFFFF;
+    text-transform: uppercase;
     border-radius: 0px;
     padding-left: 72px;
     padding-right: 72px; }
@@ -145,10 +142,12 @@ body, .site-content {
   .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox] {
     position: relative;
     width: 100% !important;
-    height: 146px !important;
-    background-image: url("./assets/image/Image.png"); }
+    height: 146px !important; }
     .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox] + label {
       display: none; }
+  .nf-form-cont .list-checkbox-wrap label {
+    padding-top: 72px;
+    padding-bottom: 24px; }
   .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox]::before {
     content: ' ';
     position: absolute;
