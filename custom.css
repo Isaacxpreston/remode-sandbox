@@ -100,7 +100,8 @@ a,
     text-decoration: underline; }
 
 .nf-form-cont {
-  background: rgba(255, 0, 0, 0.15); }
+  background: rgba(255, 0, 0, 0.15);
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1); }
   .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox] {
     position: relative;
     width: 212px !important;
@@ -108,7 +109,7 @@ a,
     background: blue;
     background-image: url("./assets/image/Image.png"); }
     .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox] + label {
-      position: absolute; }
+      display: none; }
   .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox]::before {
     content: ' ';
     position: absolute;
@@ -136,11 +137,13 @@ a,
     top: 0;
     left: 0;
     cursor: pointer;
-    background: blue;
+    background: #EDF0F1;
+    border-bottom: 1px solid transparent;
     transition: all 0.4s ease-in-out; }
   .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox]:hover::after, .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox]:checked::after {
-    background: red;
-    border-bottom: 1px solid lime; }
+    background: #FFFFFF;
+    border-bottom: 1px solid #40DFF7;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1); }
   .nf-form-cont .nf-form-title {
     display: none; }
 
