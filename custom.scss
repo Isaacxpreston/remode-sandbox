@@ -12,20 +12,20 @@ $remake: #04E400;
 $mobile-max: 768px;
 $desktop-min: 769px;
 
-@font-face {
-  font-family: 'GTWalsheimMedium';
-  src: url('./assets/fonts/GTWalsheim/GT-Walsheim-Medium.otf') format('opentype')
-}
+// @font-face {
+//   font-family: 'GTWalsheimMedium';
+//   src: url('./assets/fonts/GTWalsheim/GT-Walsheim-Medium.otf') format('opentype')
+// }
 
-@font-face {
-  font-family: 'GTWalsheimRegular';
-  src: url('./assets/fonts/GTWalsheim/GT-Walsheim-Regular.otf') format('opentype')
-}
+// @font-face {
+//   font-family: 'GTWalsheimRegular';
+//   src: url('./assets/fonts/GTWalsheim/GT-Walsheim-Regular.otf') format('opentype')
+// }
 
-@font-face {
-  font-family: 'Chrono-Bold';
-  src: url('./assets/fonts/Chrono/Chrono-Bold.otf') format('opentype')
-}
+// @font-face {
+//   font-family: 'Chrono-Bold';
+//   src: url('./assets/fonts/Chrono/Chrono-Bold.otf') format('opentype')
+// }
 
 h1,
 .h1 {
@@ -136,7 +136,7 @@ body, .site-content {
 }
 
 // outer container (col-10)
-#container {
+#nf-content-speaking, #nf-content-attending, #nf-content-sponsoring {
   position: relative;
   margin: auto;
   width: calc(100% * 10/12);
@@ -160,11 +160,6 @@ body, .site-content {
 
   label {
     @extend .utility ;
-    // &[for=nf-field-43] {
-    //   @extend .h3 ;
-    //   padding-top: 72px;
-    //   padding-bottom: 24px;
-    // }
   }
 
   .nf-field-container:not(.listcheckbox-container) {
@@ -206,12 +201,18 @@ body, .site-content {
 
   // checkbox
   .list-checkbox-wrap .nf-field-element li input[type=checkbox] {
+    display: none;
+  }
+
+  .list-checkbox-wrap .nf-field-element li input[type=checkbox] + label {
     position: relative;
     width: 100% !important;
     height: 146px !important;
-    + label {
-      display: none;
-    }
+    font-size: 0px;
+    // + label {
+    //   position: relative;
+    //   // display: none;
+    // }
   }
 
   .list-checkbox-wrap {
@@ -223,7 +224,7 @@ body, .site-content {
   }
 
   // overlay text
-  .list-checkbox-wrap .nf-field-element li input[type=checkbox]::before {
+  .list-checkbox-wrap .nf-field-element li input[type=checkbox] + label::before {
     content: ' ';
     position: absolute;
     z-index: 2;
@@ -233,7 +234,7 @@ body, .site-content {
     top: 0;
     left: 0;
     cursor: pointer;
-    background-image: url('./assets/SVG/rethink.svg');
+    background-image: url('https://s3-us-west-2.amazonaws.com/remode-vpv/rethink.svg');
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -241,12 +242,12 @@ body, .site-content {
   }
 
 
-  .list-checkbox-wrap .nf-field-element li input[type=checkbox]:hover::before, .list-checkbox-wrap .nf-field-element li input[type=checkbox]:checked::before  {
-    background-image: url('./assets/SVG/rethinkHover.svg');
+  .list-checkbox-wrap .nf-field-element li input[type=checkbox]:hover +label::before, .list-checkbox-wrap .nf-field-element li input[type=checkbox]:checked +label::before  {
+    background-image: url('https://s3-us-west-2.amazonaws.com/remode-vpv/rethinkHover.svg');
   }
 
   // underlay box
-  .list-checkbox-wrap .nf-field-element li input[type=checkbox]::after {
+  .list-checkbox-wrap .nf-field-element li input[type=checkbox] + label::after {
     content: ' ';
     position: absolute;
     z-index: 1;
@@ -261,7 +262,7 @@ body, .site-content {
     transition: all 0.4s ease-in-out;
   }
 
-  .list-checkbox-wrap .nf-field-element li input[type=checkbox]:hover::after, .list-checkbox-wrap .nf-field-element li input[type=checkbox]:checked::after {
+  .list-checkbox-wrap .nf-field-element li input[type=checkbox]:hover +label::after, .list-checkbox-wrap .nf-field-element li input[type=checkbox]:checked +label::after {
     background: $white;
     border-bottom: 1px solid $rethink;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.10);
