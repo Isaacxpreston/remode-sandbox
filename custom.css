@@ -6,7 +6,7 @@ h1,
   color: #082842;
   letter-spacing: 0.5px;
   line-height: 36px; }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1150px) {
     h1,
     .h1 {
       font-size: 44px;
@@ -21,7 +21,7 @@ h2,
   color: #082842;
   letter-spacing: 0.33px;
   line-height: 36px; }
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 1150px) {
     h2,
     .h2 {
       font-size: 38px;
@@ -90,22 +90,31 @@ a,
     line-height: 24px;
     text-decoration: underline; }
 
-body, .site-content {
+body,
+.site-content {
   background: rgba(255, 0, 0, 0.15); }
 
-#nf-content-speaking, #nf-content-attending, #nf-content-sponsoring {
+#nf-content-speaking,
+#nf-content-attending,
+#nf-content-sponsoring {
   position: relative;
   margin: auto;
   width: calc(100% * 10/12);
   display: flex;
   background: #FFFFFF;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1); }
+  @media screen and (max-width: 767px) {
+    #nf-content-speaking,
+    #nf-content-attending,
+    #nf-content-sponsoring {
+      width: 100%; } }
 
 .nf-form-cont {
   position: relative;
   margin: auto;
   width: calc(100% * 8/10); }
-  .nf-form-cont input[type=text], .nf-form-cont input[type=email] {
+  .nf-form-cont input[type=text],
+  .nf-form-cont input[type=email] {
     border-radius: 0px; }
   .nf-form-cont .nf-field-container:not(.listcheckbox-container) {
     position: relative;
@@ -124,12 +133,17 @@ body, .site-content {
     padding-right: 72px; }
   .nf-form-cont .nf-field-element > ul {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     position: relative;
     justify-content: space-between; }
     .nf-form-cont .nf-field-element > ul > li {
       position: relative;
       width: calc((100% * 2/8) - 18px) !important; }
+      @media screen and (max-width: 767px) {
+        .nf-form-cont .nf-field-element > ul > li {
+          width: calc(50% - 12px) !important;
+          margin-bottom: 24px !important; } }
   .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox] {
     display: none; }
   .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox] + label {
@@ -150,13 +164,33 @@ body, .site-content {
     top: 0;
     left: 0;
     cursor: pointer;
-    background-image: url("https://s3-us-west-2.amazonaws.com/remode-vpv/rethink.svg");
-    background-size: 50%;
+    background-size: 124px 50%;
     background-repeat: no-repeat;
     background-position: center center;
     transition: all 0.4s ease-in-out; }
-  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox]:hover + label::before, .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox]:checked + label::before {
-    background-image: url("https://s3-us-west-2.amazonaws.com/remode-vpv/rethinkHover.svg"); }
+    @media screen and (max-width: 767px) {
+      .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox] + label::before {
+        background-size: 50%; } }
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=rethink] + label::before {
+    background-image: url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/rethink+stack.svg"); }
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=rethink]:hover + label::before,
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=rethink]:checked + label::before {
+    background-image: url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/rethink+stack+hover.svg"); }
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=remake] + label::before {
+    background-image: url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remake+stack.svg"); }
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=remake]:hover + label::before,
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=remake]:checked + label::before {
+    background-image: url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remake+stack+hover.svg"); }
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=remarket] + label::before {
+    background-image: url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remarket+stack.svg"); }
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=remarket]:hover + label::before,
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=remarket]:checked + label::before {
+    background-image: url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remarket+stack+hover.svg"); }
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=reinvest] + label::before {
+    background-image: url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/reinvest+stack.svg"); }
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=reinvest]:hover + label::before,
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox][value=reinvest]:checked + label::before {
+    background-image: url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/reinvest+stack+hover.svg"); }
   .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox] + label::after {
     content: ' ';
     position: absolute;
@@ -170,7 +204,8 @@ body, .site-content {
     background: #EDF0F1;
     border-bottom: 1px solid transparent;
     transition: all 0.4s ease-in-out; }
-  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox]:hover + label::after, .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox]:checked + label::after {
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox]:hover + label::after,
+  .nf-form-cont .list-checkbox-wrap .nf-field-element li input[type=checkbox]:checked + label::after {
     background: #FFFFFF;
     border-bottom: 1px solid #40DFF7;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1); }
@@ -181,7 +216,20 @@ body, .site-content {
   .nf-form-cont .nf-error-msg {
     color: #F70CF7; }
 
-#wpadminbar, #viewPortSize {
+.nf-response-msg {
+  padding-top: 72px; }
+
+#wpadminbar,
+#viewPortSize {
   display: none; }
+
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+  content: url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/rethink+stack.svg") url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/rethink+stack+hover.svg") url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remake+stack.svg") url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remake+stack+hover.svg") url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remarket+stack.svg") url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remarket+stack+hover.svg") url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/reinvest+stack.svg") url("https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/reinvest+stack+hover.svg"); }
 
 /*# sourceMappingURL=custom.css.map */
