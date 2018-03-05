@@ -123,10 +123,11 @@ body,
 #nf-content-sponsoring {
   position: relative;
   margin: auto;
-  width: calc(100% * 10/12);
+  // width: calc(100% * 10/12);
+  width: 100%;
   display: flex;
-  background: $white;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.10);
+  background: $off-white;
+  // box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.10);
   @media screen and (max-width: $mobile-max) {
     width: 100%;
   }
@@ -138,8 +139,10 @@ body,
   margin: auto;
   width: calc(100% * 8/10); // text inputs and labels
   input[type=text],
-  input[type=email] {
+  input[type=email],
+  input[type=tel] {
     border-radius: 0px;
+    background: transparent !important;
   }
   label {
     @extend .utility;
@@ -154,6 +157,7 @@ body,
     }
   } // submit button 
   input[type=button] {
+    font-weight: normal !important;
     position: relative;
     float: right;
     background: $off-black;
@@ -162,6 +166,8 @@ body,
     border-radius: 0px;
     padding-left: 72px;
     padding-right: 72px;
+    margin-top: 72px;
+    margin-bottom: 72px;
   } // checkbox container
   .nf-field-element {
     >ul {
@@ -173,7 +179,7 @@ body,
       >li {
         position: relative;
         width: calc((100% * 2/8) - 18px) !important;
-        @media screen and (max-width: $mobile-max) {
+        @media screen and (max-width: $tablet-max) {
           width: calc(50% - 12px) !important;
           margin-bottom: 24px !important;
         }
@@ -209,7 +215,7 @@ body,
     top: 0;
     left: 0;
     cursor: pointer;
-    background-size: 124px 50%;
+    background-size: auto 60px; // 124px 50%;
     @media screen and (max-width: $mobile-max) {
       background-size: 50%;
     }
@@ -296,6 +302,54 @@ body::after {
   pointer-events: none;
   z-index: -1;
   content: url('https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/rethink+stack.svg') url('https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/rethink+stack+hover.svg') url('https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remake+stack.svg') url('https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remake+stack+hover.svg') url('https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remarket+stack.svg') url('https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/remarket+stack+hover.svg') url('https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/reinvest+stack.svg') url('https://s3-us-west-2.amazonaws.com/remode-vpv/assets/SVG/reinvest+stack+hover.svg');
+}
+
+
+// CUSTOM form input classes
+
+
+.form-label-right {
+  @media screen and (min-width: $tablet-min) {
+    position: relative;
+    display: inline-block !important;
+    width: calc(50% - 12px) !important;
+    box-sizing: border-box;
+    transform: translateX(22px);
+  }
+}
+
+.form-label-left {
+  @media screen and (min-width: $tablet-min) {
+    position: relative;
+    display: inline-block !important;
+    width: calc(50% - 12px) !important;
+    box-sizing: border-box;
+  }
+}
+
+
+// ERROR messages
+.nf-error-msg {
+  position: absolute;
+}
+
+.nf-error-msg.nf-error-field-errors {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 165px;
+  right: 0;
+}
+
+.nf-error .ninja-forms-field {
+  border: 1px solid $reinvest !important;
+}
+
+.nf-error-msg, .ninja-forms-req-symbol {
+  color: $reinvest !important;
+}
+
+.nf-form-fields-required {
+  margin-top: 48px;
 }
 
 ///////////////////////////////
